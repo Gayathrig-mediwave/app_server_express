@@ -6,13 +6,14 @@
   "scripts": {
     "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon app"
-
+    "dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "cros": "^1.0.1",
     "express": "^4.17.2"
   },
   "devDependencies": {

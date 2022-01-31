@@ -34,9 +34,9 @@ const deleteMovie = (movieId) => {
 const updateMovie = (movieId, payload) => {
   const movieIndex = movies.findIndex((m) => m.id == movieId);
   if (movieIndex != -1) {
-    movies[movieIndex][name] = payload.name;
+    movies[movieIndex]["name"] = payload.name;
   } else {
-    console.log(`movie id ${moviId} cannot be deleted`);
+    console.log(`movie id ${moviId} cannot be updated`);
   }
 };
 module.exports = {

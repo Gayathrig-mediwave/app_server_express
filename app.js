@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
+
 const port = 8080;
 const app = express();
 const db = require("./db");
+app.use(cors());
 app.use(express.json());
 
 app.listen(port, (err) => {
@@ -41,7 +44,7 @@ app.post("/movies", (req, res) => {
   return res.send(movie);
 });
 //delete a movie
-app.delete("/movies", (req, res) => {
+app.delete("/movies/:id", (req, res) => {
   const movieId = req.params.id;
   const movie = db.deleteMovie(movieId);
   return res.send({
@@ -49,7 +52,7 @@ app.delete("/movies", (req, res) => {
   });
 });
 //update a movie
-app.put("/movies", (req, res) => {
+app.put("/movies/:id", (req, res) => {
   const movieId = req.params.id;
   const movie = db.updateMovie(movieId, req.body);
   return res.send(movie);
