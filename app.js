@@ -10,7 +10,7 @@ app.use(express.json());
 app.listen(port, (err) => {
   if (err) {
     console.log(err);
-    console.log(`cannot run on${port}`);
+    console.log(`cannot run on ${port}`);
     PromiseRejectionEvent.exit(1);
   }
   console.log(`server running on port${port}`);
@@ -33,7 +33,7 @@ app.get("/movies/:id", (req, res) => {
   const movie = db.getOneMovie(movieId);
   if (!movie) {
     return res.status(404).send({
-      message: `movie ${movieId}not found`,
+      message: `movie ${movieId} not found`,
     });
   }
   return res.send(movie);
